@@ -29,7 +29,7 @@ for year in range (1986, 2021):
 
             with open(outputFile, 'a', newline='') as fle:
                 fle.write(str(int(timeString[2:6]))+ ',') # year
-                fle.write(str(int(timeString[8:9]))+ ',') # month
+                fle.write(str(int(timeString[7:9]))+ ',') # month
                 fle.write(str(int(timeString[10:12]))+ ',') # day
                 fle.write(str(int(timeString[13:15]))+ ',') # hour
                 fle.write(str(int(timeString[16:18]))+ ',') # minute
