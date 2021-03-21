@@ -47,8 +47,8 @@ for i in range(0,len(file.index)):
       fle.write( str(int(file['Hour'].loc[[i]].values))+ ',')
       fle.write( str(int(file['Minute'].loc[[i]].values))+ ',')
       fle.write( str(float(file['Second'].loc[[i]].values)/100) + ',')
-      fle.write( str(int(file['Latitude deg'].loc[[i]].values) + (float(file['Latitude min'].loc[[i]].values)/100)/60 )+ ',')
-      fle.write( str(int(file['Longitude deg'].loc[[i]].values) + (float(file['Longitude min'].loc[[i]].values)/100)/60 )+ ',')
+      fle.write( str( round(float(file['Latitude deg'].loc[[i]].values) + (float(file['Latitude min'].loc[[i]].values)/100)/60, 5 )) + ',')
+      fle.write( str( round(float(file['Longitude deg'].loc[[i]].values) + (float(file['Longitude min'].loc[[i]].values)/100)/60,5 )) + ',')
       fle.write( str(isFloat(file['Depth'].loc[[i]].values)/100)+ ',')
       fle.write( str(isFloat(file['Magnitude'].loc[[i]].values) / 10)+ '\n')
         
