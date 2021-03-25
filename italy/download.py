@@ -12,7 +12,7 @@ endDate = ["-01-31", "-03-01", "-03-31", "-04-30", "-05-31", "-06-30", "-07-31",
 outputFile = "italy.csv"
 
 with open(outputFile, 'a', newline='') as fle:
-    fle.write("Year,Month,Day,Hour,Minute,Second,Latitude,Longitude,Depth,Magnitude \n")
+    fle.write("Year,Month,Day,Hour,Minute,Second,Latitude,Longitude,Depth,Magnitude,Magnitude type \n")
 
 for year in range (1986, 2021):
     for month in range(0,12):
@@ -37,4 +37,5 @@ for year in range (1986, 2021):
                 fle.write(str(float(dataFrame['Latitude'].loc[[i]].values)) + ',') # latitude
                 fle.write(str(float(dataFrame['Longitude'].loc[[i]].values)) + ',') # longitude
                 fle.write(str(float(dataFrame['Depth/Km'].loc[[i]].values)) + ',') # longitude
-                fle.write(str(float(dataFrame['Magnitude'].loc[[i]].values)) + '\n')# magnitude
+                fle.write(str(float(dataFrame['Magnitude'].loc[[i]].values)) + ',') # magnitude
+                fle.write(dataFrame['MagType'][i] + '\n') # magnitude type
