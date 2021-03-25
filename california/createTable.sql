@@ -18,4 +18,4 @@ CREATE TABLE california (
     magtype CHAR(1)
 );
 
-LOAD DATA LOCAL infile "/home/boboc/california/california.csv" INTO TABLE california COLUMNS TERMINATED BY ',' LINES TERMINATED BY '\n' IGNORE 1 ROWS;
+LOAD DATA LOCAL infile "california.csv" INTO TABLE california COLUMNS TERMINATED BY ',' LINES TERMINATED BY '\n' IGNORE 1 ROWS;
