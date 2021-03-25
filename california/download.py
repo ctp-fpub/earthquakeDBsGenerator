@@ -31,7 +31,8 @@ colspecs = [(0, 4),
 (39, 45), 
 (46, 54), 
 (56, 60), 
-(29, 33)], 
+(29, 33),
+(34, 35)], 
 header=0,
 names=['Year',
 'Month',
@@ -42,6 +43,7 @@ names=['Year',
 'Latitude',
 'Longitude',
 'Depth',
-'Magnitude'])
+'Magnitude',
+'Magnitude type'])
 
 file.to_csv(r'california.csv', index = False, header=True)
