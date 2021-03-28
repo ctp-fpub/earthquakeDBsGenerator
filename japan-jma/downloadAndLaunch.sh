@@ -1,6 +1,6 @@
 #!/bin/bash
 mkdir output
-filename='filelist.txt'
+filename='fi.txt'
 n=1
 while read line; do
 # reading each line
