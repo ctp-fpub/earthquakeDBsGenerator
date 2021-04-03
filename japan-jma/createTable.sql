@@ -10,7 +10,7 @@ CREATE TABLE italy (
     longitude DOUBLE PRECISION,
     depth DOUBLE PRECISION,
     magnitude DOUBLE PRECISION,
-    magtype CHAR(4)
+    magtype CHAR(1)
 );
 
-LOAD DATA LOCAL infile "italy.csv" INTO TABLE italy COLUMNS TERMINATED BY ',' LINES TERMINATED BY '\n' IGNORE 1 ROWS;
+LOAD DATA LOCAL infile "japan.csv" INTO TABLE japan COLUMNS TERMINATED BY ',' LINES TERMINATED BY '\n' IGNORE 1 ROWS;

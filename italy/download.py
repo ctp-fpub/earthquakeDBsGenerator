@@ -28,11 +28,11 @@ for year in range (1986, 2021):
             timeString = str(dataFrame['Time'].loc[[i]].values)
 
             with open(outputFile, 'a', newline='') as fle:
-                fle.write(str(int(timeString[2:6]))+ ',') # year
-                fle.write(str(int(timeString[7:9]))+ ',') # month
-                fle.write(str(int(timeString[10:12]))+ ',') # day
-                fle.write(str(int(timeString[13:15]))+ ',') # hour
-                fle.write(str(int(timeString[16:18]))+ ',') # minute
+                fle.write(str(int(timeString[2:6]))+ '-') # year
+                fle.write(str(int(timeString[7:9]))+ '-') # month
+                fle.write(str(int(timeString[10:12]))+ ' ') # day
+                fle.write(str(int(timeString[13:15]))+ ':') # hour
+                fle.write(str(int(timeString[16:18]))+ ':') # minute
                 fle.write(str(float(timeString[19:25])) + ',') # second
                 fle.write(str(float(dataFrame['Latitude'].loc[[i]].values)) + ',') # latitude
                 fle.write(str(float(dataFrame['Longitude'].loc[[i]].values)) + ',') # longitude

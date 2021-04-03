@@ -22,15 +22,16 @@ colspecs = [(0, 1), # identifier
 (36, 40), # lon min
 (44, 49), # depth
 (52, 54), # magnitude
+(54, 55), # magnitude type
 ],
 header = 0,
-names = ['Identifier', 'Year', 'Month', 'Day', 'Hour', 'Minute', 'Second', 'Latitude deg', 'Latitude min', 'Longitude deg', 'Longitude min', 'Depth', 'Magnitude'])
+names = ['Identifier', 'Year', 'Month', 'Day', 'Hour', 'Minute', 'Second', 'Latitude deg', 'Latitude min', 'Longitude deg', 'Longitude min', 'Depth', 'Magnitude','Magnitude type'])
 
 outputFile = "output/japan-jma-" + str(sys.argv[1]) + ".csv"
 
 if (int(sys.argv[2])==1):
   with open(outputFile, 'a', newline='') as fle:
-      fle.write("Year,Month,Day,Hour,Minute,Second,Latitude,Longitude,Depth,Magnitude \n")
+      fle.write("Year,Month,Day,Hour,Minute,Second,Latitude,Longitude,Depth,Magnitude,Magnitude type \n")
 
 print("Processing " + str(sys.argv[1]))
 
@@ -50,6 +51,7 @@ for i in range(0,len(file.index)):
       fle.write( str( round(float(file['Latitude deg'].loc[[i]].values) + (float(file['Latitude min'].loc[[i]].values)/100)/60, 5 )) + ',')
       fle.write( str( round(float(file['Longitude deg'].loc[[i]].values) + (float(file['Longitude min'].loc[[i]].values)/100)/60,5 )) + ',')
       fle.write( str(isFloat(file['Depth'].loc[[i]].values)/100)+ ',')
-      fle.write( str(isFloat(file['Magnitude'].loc[[i]].values) / 10)+ '\n')
+      fle.write( str(isFloat(file['Magnitude'].loc[[i]].values) / 10)+ ',')
+      fle.write( str(file['Magnitude type'][i]) + '\n')
         
 
