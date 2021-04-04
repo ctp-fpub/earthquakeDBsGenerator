@@ -2,9 +2,9 @@
 
 USE cutremure;
 
-DROP TABLE italy;
+DROP TABLE japan;
 
-CREATE TABLE italy (
+CREATE TABLE japan (
     dateandtime DATETIME,
     latitude DOUBLE PRECISION,
     longitude DOUBLE PRECISION,

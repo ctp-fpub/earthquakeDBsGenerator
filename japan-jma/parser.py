@@ -42,11 +42,11 @@ for i in range(0,len(file.index)):
   
   if(str(file['Identifier'].loc[[i]].values) == "['J']"):  
     with open(outputFile, 'a', newline='') as fle:
-      fle.write( str(int(file['Year'].loc[[i]].values)) + ',')
-      fle.write( str(int(file['Month'].loc[[i]].values))+ ',')
-      fle.write( str(int(file['Day'].loc[[i]].values))+ ',')
-      fle.write( str(int(file['Hour'].loc[[i]].values))+ ',')
-      fle.write( str(int(file['Minute'].loc[[i]].values))+ ',')
+      fle.write( str(int(file['Year'].loc[[i]].values)) + '-')
+      fle.write( str(int(file['Month'].loc[[i]].values))+ '-')
+      fle.write( str(int(file['Day'].loc[[i]].values))+ ' ')
+      fle.write( str(int(file['Hour'].loc[[i]].values))+ ':')
+      fle.write( str(int(file['Minute'].loc[[i]].values))+ ':')
       fle.write( str(float(file['Second'].loc[[i]].values)/100) + ',')
       fle.write( str( round(float(file['Latitude deg'].loc[[i]].values) + (float(file['Latitude min'].loc[[i]].values)/100)/60, 5 )) + ',')
       fle.write( str( round(float(file['Longitude deg'].loc[[i]].values) + (float(file['Longitude min'].loc[[i]].values)/100)/60,5 )) + ',')
